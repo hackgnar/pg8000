@@ -1362,10 +1362,10 @@ class Connection(object):
 
         elif auth_code in (2, 3, 4, 6, 7, 8, 9):
             raise NotSupportedError(
-                "authentication method " + auth_code + " not supported")
+                "authentication method " + str(auth_code) + " not supported")
         else:
             raise InternalError(
-                "Authentication method " + auth_code + " not recognized")
+                "Authentication method " + str(auth_code) + " not recognized")
 
     def handle_READY_FOR_QUERY(self, data, ps):
         # Byte1 -   Status indicator.
